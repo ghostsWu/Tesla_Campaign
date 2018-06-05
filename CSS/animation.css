@@ -1,0 +1,868 @@
+.default_set div {
+  -webkit-transition: -webkit-filter 3s, -webkit-transform 3s, opacity 3s, filter 3s, -webkit-transform 3s, opacity 3s;
+          transition: filter 3s, transform 3s, opacity 3s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.default_set .dashboard {
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+}
+.default_set .doorB {
+  -webkit-transition: -webkit-transform 3s;
+          transition: transform 3s;
+  -webkit-transform-origin: 97.88% 100%;
+      -ms-transform-origin: 97.88% 100%;
+          transform-origin: 97.88% 100%;
+  -webkit-transition-timing-function: cubic-bezier(0.65, 0.01, 0.35, 0.99);
+          transition-timing-function: cubic-bezier(0.65, 0.01, 0.35, 0.99);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.default_set .doorA {
+  -webkit-transition: -webkit-transform 3s;
+          transition: transform 3s;
+  -webkit-transform-origin: 92.12% 42.15%;
+      -ms-transform-origin: 92.12% 42.15%;
+          transform-origin: 92.12% 42.15%;
+  -webkit-transition-timing-function: cubic-bezier(0.02, 0.7, 0.94, 0.27);
+          transition-timing-function: cubic-bezier(0.02, 0.7, 0.94, 0.27);
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.default_set .car_bright {
+  opacity: 0;
+}
+.default_set .road {
+  display: none;
+}
+.default_set .bg {
+  display: none;
+}
+.default_set .bg_dark,
+.default_set .car_dark,
+.default_set .door {
+  -webkit-filter: brightness(0.1);
+          filter: brightness(0.1);
+}
+.default_set .door .bright {
+  opacity: 0;
+}
+.default_set .brake_light {
+  display: none;
+}
+.default_set .headlight {
+  display: none;
+}
+.default_set .bg {
+  -webkit-transform: translate(0%, 1%) scale(1.2, 1.2);
+      -ms-transform: translate(0%, 1%) scale(1.2, 1.2);
+          transform: translate(0%, 1%) scale(1.2, 1.2);
+}
+.default_set .car .bright {
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+.onload_dark .bg_dark,
+.onload_dark .car_dark,
+.onload_dark .door {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition-property: -webkit-filter, -webkit-transform, opacity, filter, -webkit-transform, opacity;
+          transition-property: filter, transform, opacity;
+  -webkit-transition-duration: 2s, 1s, 0.5s;
+          transition-duration: 2s, 1s, 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1.16, 1, 1);
+          transition-timing-function: cubic-bezier(0, 1.16, 1, 1);
+}
+.onload_dark .headlight {
+  display: block;
+  -webkit-animation-name: headlight;
+          animation-name: headlight;
+}
+.onload_dark .road {
+  opacity: 0;
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+  display: block;
+  -webkit-transition-property: -webkit-filter, -webkit-transform, opacity, filter, -webkit-transform, opacity;
+          transition-property: filter, transform, opacity;
+  -webkit-transition-duration: 2s, 1s, 0.5s;
+          transition-duration: 2s, 1s, 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1.16, 1, 1);
+          transition-timing-function: cubic-bezier(0, 1.16, 1, 1);
+}
+.Lights_up .doorB {
+  -webkit-transform: translateX(-5%) rotateZ(-86deg);
+          transform: translateX(-5%) rotateZ(-86deg);
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.Lights_up .doorA {
+  -webkit-transform: rotateZ(26deg);
+          transform: rotateZ(26deg);
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.Lights_up .bg_dark {
+  opacity: 0;
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+.Lights_up .bg {
+  display: block;
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+  opacity: 1;
+}
+.Lights_up .car_dark {
+  opacity: 0;
+}
+.Lights_up .car_bright {
+  display: block;
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+  opacity: 1;
+}
+.Lights_up .door .bright {
+  display: block;
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+  opacity: 1;
+}
+.Lights_up .road {
+  opacity: 1;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+.Lights_up .track_loop {
+  -webkit-transition: -webkit-filter 3s, -webkit-transform 3s, opacity 3s, filter 3s, -webkit-transform 3s, opacity 3s;
+          transition: filter 3s, transform 3s, opacity 3s;
+  -webkit-transition-delay: 3s;
+          transition-delay: 3s;
+  -webkit-transform: translate(0px, 0%);
+      -ms-transform: translate(0px, 0%);
+          transform: translate(0px, 0%);
+  -webkit-animation-name: track_loop;
+          animation-name: track_loop;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  -webkit-transition-timing-function: cubic-bezier(0.49, 0.01, 1, 1);
+          transition-timing-function: cubic-bezier(0.49, 0.01, 1, 1);
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+}
+.Lights_up .headlight {
+  -webkit-animation-name: engine_starts_headlight;
+          animation-name: engine_starts_headlight;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.Lights_up .triangle div {
+  -webkit-transition-delay: 3s;
+          transition-delay: 3s;
+  -webkit-animation-name: triangle;
+          animation-name: triangle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-transition-timing-function: cubic-bezier(0.49, 0.01, 1, 1);
+          transition-timing-function: cubic-bezier(0.49, 0.01, 1, 1);
+}
+.Lights_up .triangle .triangle_1 {
+  -webkit-transition-duration: 3s;
+          transition-duration: 3s;
+  -webkit-transform: translate3d(0px, 0px, -3000px);
+          transform: translate3d(0px, 0px, -3000px);
+  opacity: 0;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+.Lights_up .triangle .triangle_2 {
+  -webkit-transition-duration: 1.99998s;
+          transition-duration: 1.99998s;
+  -webkit-transform: translate3d(0px, 0px, -3000px);
+          transform: translate3d(0px, 0px, -3000px);
+  opacity: 0;
+  -webkit-animation-delay: 6.999999s;
+          animation-delay: 6.999999s;
+}
+.Lights_up .triangle .triangle_3 {
+  -webkit-transition-duration: 0.99999s;
+          transition-duration: 0.99999s;
+  -webkit-transform: translate3d(0px, 0px, -3000px);
+          transform: translate3d(0px, 0px, -3000px);
+  opacity: 0;
+  -webkit-animation-delay: 7.999998s;
+          animation-delay: 7.999998s;
+}
+.Lights_up .car {
+  -webkit-transition-delay: 4s;
+          transition-delay: 4s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.31, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0.31, 1);
+  -webkit-transform: translate(0%, -10%) scale(0.8, 0.8);
+      -ms-transform: translate(0%, -10%) scale(0.8, 0.8);
+          transform: translate(0%, -10%) scale(0.8, 0.8);
+}
+.Lights_up .brake_light {
+  display: block;
+  -webkit-animation-name: headlight;
+          animation-name: headlight;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.Lights_up .dashboard {
+  opacity: 0;
+  display: block;
+}
+.Lights_up li.speeded_up_bg {
+  display: block;
+}
+.Lights_up li.accelerator {
+  display: block;
+}
+.ready .dashboard {
+  opacity: 1;
+}
+.ready .shell {
+  opacity: 0;
+  display: block;
+}
+.ready .speeded_up_ring {
+  -webkit-transform: translate(0%, 0%) scale(1, 1);
+      -ms-transform: translate(0%, 0%) scale(1, 1);
+          transform: translate(0%, 0%) scale(1, 1);
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+          transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+}
+.ready .speeded_up_ring img {
+  -webkit-animation-name: clockwise;
+          animation-name: clockwise;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.ready li.button_text,
+.ready li.challenge_text {
+  display: block;
+  opacity: 1;
+}
+.ready li.intter_ring {
+  opacity: 0;
+  display: block;
+  -webkit-transform: scale(0.8, 0.8);
+      -ms-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+  -webkit-transition: -webkit-filter 1s, -webkit-transform 1s, opacity 1s, filter 1s, -webkit-transform 1s, opacity 1s;
+          transition: filter 1s, transform 1s, opacity 1s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+          transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+}
+.ready li.intter_ring div {
+  -webkit-animation-name: clockwise;
+          animation-name: clockwise;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.ready li.speed_1_scale {
+  opacity: 0;
+  display: block;
+  -webkit-transform: scale(0.8, 0.8);
+      -ms-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 0.5s, opacity 0.25s, filter 0.25s, -webkit-transform 0.5s, opacity 0.25s;
+          transition: filter 0.25s, transform 0.5s, opacity 0.25s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+          transition-timing-function: cubic-bezier(0, 0, 0.31, 0.99);
+}
+.ready li.speed_1_pointer {
+  opacity: 0;
+  display: block;
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 8s, opacity 0.25s, filter 0.25s, -webkit-transform 8s, opacity 0.25s;
+          transition: filter 0.25s, transform 8s, opacity 0.25s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+.ready li.outer_ring {
+  opacity: 0;
+  display: block;
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 8s, opacity 0.25s, filter 0.25s, -webkit-transform 8s, opacity 0.25s;
+          transition: filter 0.25s, transform 8s, opacity 0.25s;
+  -webkit-transition-timing-function: cubic-bezier(0.79, 0.08, 1, 1);
+          transition-timing-function: cubic-bezier(0.79, 0.08, 1, 1);
+}
+.ready li.outer_ring div {
+  -webkit-animation-name: anticlockwise;
+          animation-name: anticlockwise;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.ready .shell {
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 0.16666667s, opacity 0.25s, filter 0.25s, -webkit-transform 0.16666667s, opacity 0.25s;
+          transition: filter 0.25s, transform 0.16666667s, opacity 0.25s;
+  -webkit-transform: translate(0%, 0%) scale(0.8, 0.8);
+      -ms-transform: translate(0%, 0%) scale(0.8, 0.8);
+          transform: translate(0%, 0%) scale(0.8, 0.8);
+}
+.speed_1 .bg {
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 10s, opacity 0.25s, filter 0.25s, -webkit-transform 10s, opacity 0.25s;
+          transition: filter 0.25s, transform 10s, opacity 0.25s;
+  -webkit-transform: translate(0%, 0%) scale(1, 1);
+      -ms-transform: translate(0%, 0%) scale(1, 1);
+          transform: translate(0%, 0%) scale(1, 1);
+}
+.speed_1 .car .door {
+  display: none;
+}
+.speed_1 li.intter_ring {
+  opacity: 1;
+  -webkit-transform: rotate(0deg) scale(1, 1);
+      -ms-transform: rotate(0deg) scale(1, 1);
+          transform: rotate(0deg) scale(1, 1);
+}
+.speed_1 li.speed_1_scale {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0%) scale(1, 1);
+      -ms-transform: translate(0%, 0%) scale(1, 1);
+          transform: translate(0%, 0%) scale(1, 1);
+}
+.speed_1 li.speed_1_pointer {
+  opacity: 1;
+}
+.speed_1 li.outer_ring {
+  opacity: 1;
+  -webkit-transform: rotate(0deg) scale(0.9, 0.9);
+      -ms-transform: rotate(0deg) scale(0.9, 0.9);
+          transform: rotate(0deg) scale(0.9, 0.9);
+}
+.speed_1 .shell {
+  opacity: 1;
+}
+.speed_1 .title {
+  display: none;
+}
+.speed_1 .score {
+  display: block;
+  -webkit-animation-name: score;
+          animation-name: score;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.speed_1 li.speed_2_scale {
+  display: block;
+  opacity: 0;
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 0.25s, opacity 0.25s, filter 0.25s, -webkit-transform 0.25s, opacity 0.25s;
+          transition: filter 0.25s, transform 0.25s, opacity 0.25s;
+  -webkit-transform: rotate(-155deg) scale(0.5, 0.5);
+      -ms-transform: rotate(-155deg) scale(0.5, 0.5);
+          transform: rotate(-155deg) scale(0.5, 0.5);
+}
+.speed_1 li.speed_2_pointer {
+  display: block;
+  opacity: 0;
+  -webkit-transform: rotate(-155deg) scale(0.8, 0.8);
+      -ms-transform: rotate(-155deg) scale(0.8, 0.8);
+          transform: rotate(-155deg) scale(0.8, 0.8);
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 8s, opacity 0.25s, filter 0.25s, -webkit-transform 8s, opacity 0.25s;
+          transition: filter 0.25s, transform 8s, opacity 0.25s;
+}
+.speed_1 .triangle div {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+.speed_1 .triangle .triangle_1 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.speed_1 .triangle .triangle_2 {
+  -webkit-animation-delay: 3.4999995s;
+          animation-delay: 3.4999995s;
+}
+.speed_1 .triangle .triangle_3 {
+  -webkit-animation-delay: 3.999999s;
+          animation-delay: 3.999999s;
+}
+.speed_1 .car {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.speed_1 .headlight {
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: none;
+}
+.speed_1 .brake_light {
+  -webkit-animation-name: headlight;
+          animation-name: headlight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.speed_1.accelerate li.speed_1_pointer {
+  -webkit-transform: rotate(102deg);
+      -ms-transform: rotate(102deg);
+          transform: rotate(102deg);
+}
+.speed_1.accelerate li.outer_ring {
+  -webkit-transform: rotate(-720deg) scale(1.1, 1.1);
+      -ms-transform: rotate(-720deg) scale(1.1, 1.1);
+          transform: rotate(-720deg) scale(1.1, 1.1);
+}
+.speed_1.accelerate li.intter_ring {
+  -webkit-transform: rotate(180deg) scale(0.9, 0.9);
+      -ms-transform: rotate(180deg) scale(0.9, 0.9);
+          transform: rotate(180deg) scale(0.9, 0.9);
+}
+.speed_1.accelerate li.speed_1_scale {
+  -webkit-transform: rotate(0deg) scale(1.05, 1.05);
+      -ms-transform: rotate(0deg) scale(1.05, 1.05);
+          transform: rotate(0deg) scale(1.05, 1.05);
+}
+.speed_1.accelerate .car {
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 8s, opacity 0.25s, filter 0.25s, -webkit-transform 8s, opacity 0.25s;
+          transition: filter 0.25s, transform 8s, opacity 0.25s;
+  -webkit-transform: translate(0%, -8%) scale(0.9, 0.9);
+      -ms-transform: translate(0%, -8%) scale(0.9, 0.9);
+          transform: translate(0%, -8%) scale(0.9, 0.9);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.speed_1.accelerate .headlight {
+  -webkit-animation-name: headlight;
+          animation-name: headlight;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: block;
+}
+.speed_1.accelerate .brake_light {
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  opacity: 0;
+  display: none;
+}
+.speed_1.accelerate .car .bright {
+  -webkit-transform: translate(0%, 2%) scale(1.03, 1.03);
+      -ms-transform: translate(0%, 2%) scale(1.03, 1.03);
+          transform: translate(0%, 2%) scale(1.03, 1.03);
+}
+.speed_2 li.speed_1_scale {
+  -webkit-transform: rotate(90deg) scale(0.75, 0.75);
+      -ms-transform: rotate(90deg) scale(0.75, 0.75);
+          transform: rotate(90deg) scale(0.75, 0.75);
+}
+.speed_2 li.speed_1_pointer {
+  opacity: 0;
+}
+.speed_2 li.speed_2_scale {
+  opacity: 1;
+  -webkit-transform: rotate(0deg) scale(1, 1);
+      -ms-transform: rotate(0deg) scale(1, 1);
+          transform: rotate(0deg) scale(1, 1);
+}
+.speed_2 li.speed_2_pointer {
+  opacity: 1;
+}
+.speed_2 li.outer_ring {
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 0.25s, opacity 0.25s, filter 0.25s, -webkit-transform 0.25s, opacity 0.25s;
+          transition: filter 0.25s, transform 0.25s, opacity 0.25s;
+}
+.speed_2 li.outer_ring div {
+  -webkit-animation-name: anticlockwise;
+          animation-name: anticlockwise;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.speed_2 li.intter_ring div {
+  -webkit-animation-name: clockwise;
+          animation-name: clockwise;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.speed_2 .triangle div {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+}
+.speed_2 .triangle .triangle_1 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.speed_2 .triangle .triangle_2 {
+  -webkit-animation-delay: 1.74999975s;
+          animation-delay: 1.74999975s;
+}
+.speed_2 .triangle .triangle_3 {
+  -webkit-animation-delay: 1.9999995s;
+          animation-delay: 1.9999995s;
+}
+.speed_2.accelerate li.speed_1_scale {
+  -webkit-transform: rotate(90deg) scale(0.75, 0.75);
+      -ms-transform: rotate(90deg) scale(0.75, 0.75);
+          transform: rotate(90deg) scale(0.75, 0.75);
+}
+.speed_2.accelerate li.speed_2_pointer {
+  -webkit-transform: rotate(-10deg) scale(1, 1);
+      -ms-transform: rotate(-10deg) scale(1, 1);
+          transform: rotate(-10deg) scale(1, 1);
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 2s, opacity 0.25s, filter 0.25s, -webkit-transform 2s, opacity 0.25s;
+          transition: filter 0.25s, transform 2s, opacity 0.25s;
+}
+.speed_2.accelerate li.outer_ring {
+  -webkit-transform: rotate(0deg) scale(0.8, 0.8);
+      -ms-transform: rotate(0deg) scale(0.8, 0.8);
+          transform: rotate(0deg) scale(0.8, 0.8);
+}
+.speed_2.accelerate .car {
+  -webkit-transition: -webkit-filter 0.25s, -webkit-transform 2s, opacity 0.25s, filter 0.25s, -webkit-transform 2s, opacity 0.25s;
+          transition: filter 0.25s, transform 2s, opacity 0.25s;
+  -webkit-transform: translate(0%, -5%) scale(1, 1);
+      -ms-transform: translate(0%, -5%) scale(1, 1);
+          transform: translate(0%, -5%) scale(1, 1);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+@-webkit-keyframes triangle {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 300px);
+            transform: translate3d(0px, 0px, 300px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, -3000px);
+            transform: translate3d(0px, 0px, -3000px);
+    opacity: 0;
+  }
+}
+@keyframes triangle {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 300px);
+            transform: translate3d(0px, 0px, 300px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, -3000px);
+            transform: translate3d(0px, 0px, -3000px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes track_loop {
+  from {
+    -webkit-transform: translate(0px, 25%);
+            transform: translate(0px, 25%);
+  }
+  to {
+    -webkit-transform: translate(0px, 0%);
+            transform: translate(0px, 0%);
+  }
+}
+@keyframes track_loop {
+  from {
+    -webkit-transform: translate(0px, 25%);
+            transform: translate(0px, 25%);
+  }
+  to {
+    -webkit-transform: translate(0px, 0%);
+            transform: translate(0px, 0%);
+  }
+}
+.test {
+  -webkit-animation-name: test;
+          animation-name: test;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+@-webkit-keyframes test {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+@keyframes test {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+.headlight {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+@-webkit-keyframes headlight {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes headlight {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes engine_starts_headlight {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes engine_starts_headlight {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes clockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes clockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes anticlockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@keyframes anticlockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes score {
+  0% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  1% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+            transform: scale(1.3, 1.3);
+  }
+}
+@keyframes score {
+  0% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  1% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+            transform: scale(1.3, 1.3);
+  }
+}
+@-webkit-keyframes vibration {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0.5%);
+            transform: translate(0%, 0.5%);
+  }
+}
+@keyframes vibration {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0.5%);
+            transform: translate(0%, 0.5%);
+  }
+}

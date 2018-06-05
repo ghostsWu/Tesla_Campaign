@@ -1,0 +1,525 @@
+// 主要变量表
+
+
+// 式样开始
+
+body,html{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 0;
+
+	overflow: hidden;
+	background-color: black;
+}
+
+// *{
+// 	display: none;
+// 	display: block;
+// }
+
+.dashboard,.dashboard *{
+	// pointer-events: none;
+	user-select: none;
+}
+
+
+// 消失点
+.Vanishingpoint{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	// background-size: 100% 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url(../images/Vanishingpoint-01.svg);
+	opacity: .5;
+	
+	display: none;
+	// display: block;
+
+}
+
+.backgroun{
+	// 背景图片层叠
+	div{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		background-size: 100% auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+
+
+
+	.bg{
+		background-image: url(../images/bg.jpg);
+	}
+	
+	.bg_dark{
+		background-image: url(../images/bg-dark.jpg)
+	}
+}
+
+.title{
+	position: relative;
+	width: 140%;
+	margin-left: 0 - (140% - 100%) / 2;
+	
+
+	img{
+		width: 100%;
+		position: absolute;
+		z-index: 99;
+		left: 0;
+		top: 120px;
+		background-size: 100% auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+}
+
+.car{
+
+	// display: none;
+	position: absolute;
+	// 45% 是穷举出来的。
+	top: 45%;
+	width: 130%;
+	margin-left: 0 - (130% - 100%) / 2;
+	z-index: 50;
+
+
+	background-image: url(../images/car_0008_shadow.png);
+	background-size: 100% auto;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+
+	.car_dark{
+		position: absolute;
+		width: 100%;
+	}
+
+	.door{
+		width: 50%;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+
+		.doorA{
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+	
+		.bright{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+		}
+
+
+	}
+
+	.right{
+		transform: rotateY(180deg);
+		transform-origin: right;
+	}
+	
+	.brake_light{
+		position: absolute;
+		width: 100%;
+		top: 0%;
+		margin-top: 11%;
+	}
+
+	.headlight{
+		position: absolute;
+		width: 100%;
+		top: 0%;
+		margin-top: 15%;
+	}
+	
+	.car_bright{
+		position: relative;
+		background-image: url(../images/car_0002_tires.png);
+		background-size: 100% auto;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+
+
+	}
+
+	
+}
+
+.road{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+	overflow: hidden;
+
+	perspective: 500;
+	perspective-origin: 50% 50%;
+	// transform-style: preserve-3d;
+	
+	.track{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		// overflow: hidden;
+		
+		transform: rotateX(90deg) scale3d(0.25, 2, 0.5) translate3d(0px, 0%, -60px);
+		transform-origin: center center;
+
+		background-color: #fff;
+
+		&:after{
+			position: absolute;
+			width: 100%;
+			height: 180%;
+			content: "";
+			display: block;
+			top: -100%;
+			left: 0;
+			// background-color: #fff;
+		
+			/* Rectangle: */
+			background-image: linear-gradient(#e4eaee 49%, rgba(255,255,255,0.00) 100%);
+		}
+	}
+
+	.track_loop{
+		width: 100%;
+		height: 200%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		transform: translate(0px,25%);
+
+		background-image: url(../images/track.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+
+		// img{
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	left: 0;
+		// 	top: 0;
+		// 	top: 50%;
+		// 	margin-top: -100%;
+		// }
+	}
+
+	.triangle{
+
+
+		div{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			
+			background-image: url(../images/Triangle.png);
+		background-size: 100% auto;
+		background-position: center center;
+		background-repeat: no-repeat;
+
+
+		}
+
+		.triangle_3{
+			transform: translate3d(0px,0px,-1800px);
+		}
+		.triangle_2{
+			transform: translate3d(0px,0px,-300px);
+		}
+		.triangle_1{
+			transform: translate3d(0px,0px,300px);
+		}
+		
+		
+
+
+	}
+
+}
+
+
+.dashboard{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 5%;
+	z-index: 999;
+	display: none;
+	
+	.shell{
+		width: 80%;
+		margin-left: (100% - 80%) / 2;
+		display: none;
+	}
+
+	.dashboard_ui{
+		width: 50%;
+		position: absolute;
+		left: 50%;
+		margin-left: 0 - (50% / 2);
+		bottom: -10%;
+
+	}
+
+	.speeded_up_ring{
+		transform: translate(0%, 0%) scale(0.8, 0.8);
+	}
+
+	.ui_center{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		li{
+
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			display: none;
+
+			text-align: center;
+
+			div{
+				width: 100%;
+				height: 100%;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+	}
+
+	.speeded_up_bg{
+		background-image: url(../images/dashboard_0001_speeded-up-bg.png)
+	}
+	.accelerator{
+		background-image: url(../images/dashboard_0000_accelerator.png)
+	}
+	.outer_ring div{
+		background-image: url(../images/dashboard_0008_outer_ring.png)
+	}
+	.speed_1_scale{
+		background-image: url(../images/dashboard_0007_speed-1-scale.png)
+	}
+	.speed_1_pointer{
+		background-image: url(../images/dashboard_0004_speed-1-pointer.png)
+	}
+	.speed_2_scale{
+		background-image: url(../images/dashboard_0006_speed-2-scale.png)
+	}
+	.speed_2_pointer{
+		background-image: url(../images/dashboard_0005_speed-2-pointer.png)
+	}
+	.intter_ring div{
+		background-image: url(../images/dashboard_0003_intter_ring.png)
+	}
+
+	.outer_ring{
+		// border: 1px solid rgba(17, 17, 17, 0.34);
+	}
+
+	.intter_ring{
+		// border: 1px solid rgba(213, 0, 0, 0.34);
+	}
+
+	
+
+	.button_text{
+		padding-top: 59%;
+    	font-size: 20px;
+    	color: #fff;
+    	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.64);
+	}
+
+}
+
+.ui_bg{
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	left: 0;
+	bottom: 0;
+
+	z-index: 3;
+
+	// background-image: url(../images/ui-bg-01.svg);
+	// background-position: center;
+	// background-size: 100% auto;
+
+	/* Rectangle: */
+	background-image: linear-gradient(0deg, rgba(0, 23, 46, 0.69) 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+.score{
+	font-size: 12px;
+	line-height: 12px;
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	
+	color: #FFF;
+	text-align: center;
+	top: 15%;
+	left: 0;
+
+	background-image: radial-gradient(40% 200%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 92%);
+	padding: 10px;
+	box-sizing: border-box;
+
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+
+	display: none;
+	
+	.your_score{
+		font-size: 42px;
+		font-weight: bold;
+		line-height: 42px;
+		font-style:italic;
+
+		text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.82);
+	}
+
+	.your_time{
+		margin-top: 0.3em;
+
+		span{
+			font-size: 20px;
+			font-weight: bold;
+			font-style:italic;
+
+			text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.82);
+
+		}
+	}
+}
+
+.gameover{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 10%;
+
+	display: none;
+
+	background-color: rgba(0, 0, 0, 0.44);
+
+	img{
+		box-shadow: 0px 2px 13px rgba(17, 17, 17, 0.8);
+    	border-radius: 13px;
+	}
+}
+
+
+
+// 各个阶段；
+/////////////////////////////////////////
+.default_set{
+	
+
+}
+
+/////////////////////////////////////////
+//加载完成，显示黑色车；
+.onload_dark{
+
+}
+
+/////////////////////////////////////////
+// 亮灯，关门，启动赛道
+.Lights_up{
+	
+
+	
+
+	
+
+}
+/////////////////////////////////////////
+// 进入游戏预备状态，道路无限运行，
+.ready{
+
+
+}
+
+/////////////////////////////////////////
+// 用户首次按住，第一次加速
+.speed_1
+{
+
+}
+
+
+/////////////////////////////////////////
+// 第一次加速途中松开
+.speed_1_brake{
+
+}
+
+/////////////////////////////////////////
+// 第二次加速
+.speed_2{
+
+}
+
+/////////////////////////////////////////
+// 第二次加速中松开
+.speed_2_brake{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

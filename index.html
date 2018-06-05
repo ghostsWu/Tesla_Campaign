@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+	<!-- 基础式样 -->
+	<link rel="stylesheet" type="text/css" href="css/bacecss.css">
+	<!-- 元素静态定位式样 -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
+	<!-- <script type="text/javascript" src="js/loader.js" async="async"></script> -->
+	<title>Tesla Campaign game 1</title>
+</head>
+<body class="default_set">
+	<!-- 背景图片 -->
+	<div class="backgroun">
+		<!-- 为了方便居中，使用背景加载 -->
+		<div class="bg"></div>
+		<div class="bg_dark"></div>
+	</div>
+
+	<div class="ui_bg">
+		<img src="images/ui-bg-01.svg">
+	</div>
+
+	<!-- 主标题 -->
+	<div class="title">
+		<img class="light_s" src="images/title_0000s_0000_light-s.png">
+		<img class="text" src="images/title_0000s_0001_text.png">
+		<img class="light_big" src="images/title_0000s_0002_light-big.png">
+	</div>
+
+	<!-- 主跑道结构 -->
+		<div class="road">
+		 
+
+			 <div class="triangle">
+			 	<div class="triangle_3"></div>
+			 	<div class="triangle_2"></div>
+			 	<div class="triangle_1"></div>
+			 </div>
+
+			 <div class="track">
+			 	<div class="track_loop">
+			 	</div>
+			 </div>
+
+		</div>
+
+	<!-- 车主体 -->
+	<div class="car">
+		<!-- 刹车灯在车后面 -->
+		<div class="brake_light">
+			<img src="images/car_0009_brake-light.png">
+		</div>
+
+		<!-- 门需要镜像复制，所以套多一层-->
+		<div class="door left">
+			<!-- 门的结构是关节的，所以需要套层 -->
+			<div class="doorB left">
+				<img class="dark" src="images/car_0006_doorA-dark.png">
+				<img class="bright" src="images/car_0004_doorA-bright.png">
+				<div class="doorA">
+					<img class="dark" src="images/car_0007_doorB-dark.png">
+					<img class="bright" src="images/car_0005_doorB-bright.png">
+				</div>
+			</div>
+		</div>
+		<div class="door right">
+			<!-- 门的结构是关节的，所以需要套层 -->
+			<div class="doorB left">
+				<img class="dark" src="images/car_0006_doorA-dark.png">
+				<img class="bright" src="images/car_0004_doorA-bright.png">
+				<div class="doorA">
+					<img class="dark" src="images/car_0007_doorB-dark.png">
+					<img class="bright" src="images/car_0005_doorB-bright.png">
+				</div>
+			</div>
+		</div>
+
+		
+		
+		
+		<!-- 车的主体，多层结构 -->
+		<div class="car_dark">
+			<img src="images/car_0001_dark.png">
+		</div>
+		<div class="car_bright">
+			<img class="bright" src="images/car_0003_bright.png">
+			
+		</div>
+		
+
+		<!-- 车头灯，在车前面 -->
+		<div class="headlight">
+			<img src="images/car_0000_headlight.png">
+		</div>
+
+
+
+
+	</div>
+	
+
+
+
+
+	<div class="dashboard">
+		<div class="shell">
+			<img src="images/0006_shell.png" alt="" />
+		</div>
+		<div class="dashboard_ui">
+			<div class="speeded_up_ring">
+				<img src="images/dashboard_0002_speeded-up-ring.png">
+			</div>
+			
+			<ul class="ui_center" id="speedup_but">
+				<li class="speeded_up_bg"></li>
+				<li class="accelerator"></li>
+				<li class="outer_ring">
+					<div class="outer_ring_loop"></div>
+				</li>
+				<li class="speed_1_scale"></li>
+				<li class="speed_1_pointer"></li>
+				<li class="speed_2_scale"></li>
+				<li class="speed_2_pointer"></li>
+				<li class="intter_ring">
+					<div class="intter_ring_loop"></div>
+				</li>
+				<li class="button_text">按住</li>
+				<!-- <li class="challenge_text">挑战你的承受能力</li> -->
+
+			</ul>
+		</div>
+
+	</div>
+	
+
+	<div class="score">
+		<span>您的极限</span>
+		<div class="your_score">0</div>
+		<div class="your_time">
+		剩余时间 <span>0</span>
+		</div>
+	</div>
+
+
+
+
+	<div class="Vanishingpoint"></div>
+
+	<div class="gameover">
+		<img src="images/lost.png">
+	</div>
+
+<script type="text/javascript">
+
+
+window.onload = function(){
+
+	// 公共变量
+var bd = document.querySelector("body");
+
+// 游戏状态
+var status = {
+		onload_dark 	: "onload_dark",
+		Lights_up 		: "Lights_up",
+		ready 			: "ready",
+		speed_1 		: "speed_1",
+		accelerate 		: "accelerate",
+		slow_down 		: "slow_down",
+		speed_2 		: "speed_2"
+	};
+
+
+	console.log(status);
+
+	
+
+	var speedup_but = document.querySelector("#speedup_but");
+
+	var onload_dark_duration = 3000;
+
+	// ready = @default_set + @onload_dark_duration + (@Lights_up_duration * 2); 
+	var ready = 9500;
+
+	// 页面加载完就送黑暗提高亮度，显示车和标题；
+	// change_speed(status.onload_dark)
+	bd.className = bd.className + " onload_dark";
+	console.log("onload_dark 暗灯点亮");
+
+
+	//启动完全白天 时间差取之于@onload_dark_duration
+	setTimeout( function(){
+		bd.className = bd.className + " Lights_up";
+		console.log("Lights_up 完全亮灯出现场景");
+	},onload_dark_duration);
+
+	setTimeout( function(){
+		bd.className = bd.className + " ready";
+		console.log("ready点击前的循环动画状态准备好，开始监听触摸");
+		play();
+	},ready);
+
+
+
+// ready后开始监听游戏操作
+function play(){
+
+	console.log("play")
+
+	var but = document.querySelector("#speedup_but");
+
+	but.addEventListener("touchstart",function(){
+		// 首次点击赛道加速
+		if (bd.className.match(status.speed_1) == null ){
+			track_speedup();
+		}else{
+			console.log("已经在加速");
+		}
+
+		change_speed(status['accelerate']);
+		console.log("按住了，开始加速" + status.accelerate);
+	})
+
+	but.addEventListener("touchend",function(){
+		change_speed(status.accelerate);
+		console.log("松开了，减速" + status.accelerate);
+	})
+
+}
+
+	
+
+
+
+// 添加状态前先看看是否已经有这个状态，没有就加入，有就移除。
+function change_speed(i){
+
+	var bdstatus = bd.className.match(i);
+	console.log("正在处理状态" + i );
+
+	if (bd.className.match(i) == null ) {
+
+
+		console.log("当前class=" + bd.className + "加入状态 " + i);
+		bd.className = bd.className + " " + i;
+
+	}else{
+
+		console.log("当前class=" + bd.className + "移除状态 " + i);
+		bd.className = bd.className.replace(i," ");
+
+	}
+	
+}
+
+
+function track_speedup(){
+
+	change_speed(status.speed_1);
+
+	// 最大分数
+	var maxscore = 19999;
+	//当前分数
+	var now_score = 0;
+	// 加分偏移值
+	var Deviation = 0.5;
+
+	//分数差异化参数
+	var random_score = 0;
+
+
+	// time = @speed_1_duration + @speed_2_duration
+	var time = 12000;
+
+	var now_time = time;
+
+
+	// 此时段后加速
+	var rushtime = 4000;
+
+	var speedup = setInterval(function(){
+		console.log("当前时间=" + now_time+ ", 当前分数=" + now_score);
+		// 时间倒数减值
+
+		document.querySelector(".your_time span").innerHTML = (now_time * 0.001).toFixed(3) + "s";
+		now_time = now_time - 166;
+
+
+
+		// 分数增加公式
+		// 如果没有按住
+		if (bd.className.match(status.accelerate) == null ){
+			// 分数增加速度要加偏移值
+			now_score = now_score + ((maxscore / ( time * 0.0001 * 60))* Deviation) + random_score
+		}else{
+			// 已经按住，则全速加分；
+			now_score = now_score + ((maxscore / ( time * 0.0001 * 60))* 1 ) + random_score
+		}
+
+		document.querySelector(".your_score").innerHTML = now_score.toFixed(0);
+
+
+		// 时间消耗完
+		if(now_time <= 0){
+			console.log("时间结束")
+			document.querySelector(".your_time span").innerHTML = "0s";
+			speedup = window.clearInterval(speedup);
+
+			setTimeout(function(){
+				gameover(now_score);
+			},1000);
+		}
+
+		// 最后加速
+		if(now_time <= 4000 && bd.className.match(status.speed_2) == null){
+			console.log("最后加速")
+			bd.className = bd.className + " " + status.speed_2;
+		}
+
+
+
+
+
+
+	},166);
+
+
+
+}
+
+
+
+function gameover(now_score){
+	alert("Gameover");
+	console.log("gameover")
+	document.querySelector(".gameover").style.display = "block";
+}
+
+}
+
+
+</script>
+</body>
+</html>
